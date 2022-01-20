@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { MenuItems } from './MenuItems';
 
 class Navbar extends Component {
   render() {
@@ -9,7 +10,15 @@ class Navbar extends Component {
 
         </div>
         <ul>
-          <li></li>
+          {MenuItems.map((item, index) => {
+            return (
+              <li key={index}>
+                <a className={item.name} href={item.url}>
+                  {item.title}
+                </a>
+              </li>
+            )
+          })}
         </ul>
       </nav>
     )
